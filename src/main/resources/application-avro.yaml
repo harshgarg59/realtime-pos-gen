@@ -1,0 +1,13 @@
+spring:
+  kafka:
+    producer:
+      client-id: avro-pos-simulator
+      value-serializer: io.confluent.kafka.serializers.KafkaAvroSerializer
+      properties:
+        schema.registry.url: http://localhost:8081
+
+application:
+  configs:
+    topic:
+      name: pos-topic-avro
+
