@@ -1,6 +1,5 @@
 package io.nexdata.realtime.data.jsondatagen;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import io.nexdata.realtime.data.idatagen.AddressGenerator;
 import io.nexdata.realtime.data.idatagen.InvoiceGenerator;
 import io.nexdata.realtime.data.idatagen.ItemGenerator;
@@ -8,14 +7,11 @@ import io.nexdata.realtime.model.json.JsonAddress;
 import io.nexdata.realtime.model.json.JsonInvoice;
 import io.nexdata.realtime.model.json.JsonItem;
 import lombok.extern.log4j.Log4j2;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
 @Service
 @Log4j2
