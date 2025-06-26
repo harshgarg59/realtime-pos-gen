@@ -48,6 +48,7 @@ public class AvroInvoiceGenerator extends InvoiceGenerator<AvroInvoice> {
         for (int i = 0; i < noOfItems; i++) {
             AvroItem nextItem = itemGenerator.getNextItem();
             totalAmount = totalAmount + nextItem.getTotalValue();
+            itemList.add(nextItem);
         }
         invoice.setNumberOfItems(noOfItems);
         invoice.setItems(itemList);

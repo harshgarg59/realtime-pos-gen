@@ -48,6 +48,7 @@ public class JsonInvoiceGenerator  extends InvoiceGenerator<JsonInvoice> {
         for (int i = 0; i < noOfItems; i++) {
             JsonItem nextItem = itemGenerator.getNextItem();
             totalAmount = totalAmount + nextItem.getTotalValue();
+            itemList.add(nextItem);
         }
         invoice.setNumberOfItems(noOfItems);
         invoice.setItems(itemList);
