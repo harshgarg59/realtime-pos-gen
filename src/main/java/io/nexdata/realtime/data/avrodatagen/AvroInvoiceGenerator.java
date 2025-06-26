@@ -1,35 +1,31 @@
 package io.nexdata.realtime.data.avrodatagen;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import io.nexdata.realtime.data.idatagen.AddressGenerator;
 import io.nexdata.realtime.data.idatagen.InvoiceGenerator;
 import io.nexdata.realtime.data.idatagen.ItemGenerator;
 import io.nexdata.realtime.model.avro.AvroAddress;
 import io.nexdata.realtime.model.avro.AvroInvoice;
 import io.nexdata.realtime.model.avro.AvroItem;
-import io.nexdata.realtime.model.json.JsonAddress;
-import io.nexdata.realtime.model.json.JsonItem;
 import lombok.extern.log4j.Log4j2;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
 @Service
 @Log4j2
 @Profile("avro")
 public class AvroInvoiceGenerator extends InvoiceGenerator<AvroInvoice> {
 
-    private final AddressGenerator<AvroAddress> addressGenerator=new AddressGenerator<>(AvroAddress[].class);
+    private final AddressGenerator<AvroAddress> addressGenerator;
 
-    private final ItemGenerator<AvroItem> itemGenerator=new ItemGenerator<>(AvroItem[].class);
+    private final ItemGenerator<AvroItem> itemGenerator;
 
     public AvroInvoiceGenerator() {
         super(AvroInvoice[].class);
+        addressGenerator = new AddressGenerator<>(AvroAddress[].class);
+        itemGenerator = new ItemGenerator<>(AvroItem[].class);
     }
 
     @Override
