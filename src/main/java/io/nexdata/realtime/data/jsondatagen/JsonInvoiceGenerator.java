@@ -24,8 +24,8 @@ public class JsonInvoiceGenerator  extends InvoiceGenerator<JsonInvoice> {
 
     public JsonInvoiceGenerator() {
         super(JsonInvoice[].class);
-        addressGenerator=new AddressGenerator<>(JsonAddress[].class);
-        itemGenerator=new ItemGenerator<>(JsonItem[].class);
+        addressGenerator = new AddressGenerator<>(JsonAddress[].class);
+        itemGenerator = new ItemGenerator<>(JsonItem[].class);
     }
 
     @Override
