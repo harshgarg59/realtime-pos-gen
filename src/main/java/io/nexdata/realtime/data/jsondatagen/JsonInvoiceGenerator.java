@@ -15,7 +15,7 @@ import java.util.List;
 
 @Service
 @Log4j2
-@Profile({"json","default"})
+@Profile({"json"})
 public class JsonInvoiceGenerator  extends InvoiceGenerator<JsonInvoice> {
 
     private final AddressGenerator<JsonAddress> addressGenerator;

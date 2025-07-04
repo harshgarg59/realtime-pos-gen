@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @Log4j2
-@Profile({"json","default"})
+@Profile({"json"})
 public class JsonProducerService implements ProducerService<JsonInvoice> {
 
     @Value("${application.configs.topic.name}")
